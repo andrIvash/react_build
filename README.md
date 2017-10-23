@@ -3,8 +3,8 @@
 
 [Demo][demo] | [Source][source]
 
-[demo]: 
-[source]: 
+[demo]: http://
+[source]: http://
 
 
 ## Getting started for dev

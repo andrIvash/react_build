@@ -1,6 +1,6 @@
 
 // import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
-const webpack  = require('webpack');
+const webpack = require('webpack');
 const path = require('path');
 // import StyleLintPlugin from 'stylelint-webpack-plugin';
 
@@ -16,11 +16,11 @@ module.exports = {
     path: path.join(__dirname, './build')
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
-      filename: 'assets/scripts/common.js',
-      minChunks: 2
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'common',
+    //   filename: 'assets/scripts/common.js',
+    //   minChunks: 2
+    // }),
     // new webpack.ProvidePlugin({
     //   $: 'jquery',
     //   jQuery: 'jquery',

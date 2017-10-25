@@ -2,7 +2,6 @@
 // ---------------------------------------- init ---------------------------------------//
 const gulp = require('gulp');
 const webpack = require('webpack');
-const pug = require('gulp-pug');
 const sass = require('gulp-sass');
 const csso = require('gulp-csso');
 const postcss = require('gulp-postcss');
@@ -36,24 +35,10 @@ gulp.task('webpack', function() {
 
 });
 // ---------------------------------------- pug -----------------------------------------//
-gulp.task('pug', function() {
+gulp.task('html', function() {
   return gulp.src([
-    './src/templates/index.pug'
-  ])
-    .pipe(pug({ 
-      pretty: true,
-      locals: {
-        data: JSON.parse(fs.readFileSync('./src/settings/settings.json', 'utf8'))
-      }
-    }))
-    .on('error', notify.onError(function(error) {
-      console.log(123);
-      return {
-        title: 'pug',
-        message: error.message
-      };
-    }))
-    .pipe(gulp.dest('./build'));
+    './src/templates/index.html'
+  ]).pipe(gulp.dest('./build'));
 });
 // ---------------------------------------- css ---------------------------------------//
 gulp.task('css', function() {
@@ -94,7 +79,7 @@ gulp.task('copy.fonts', function() {
 gulp.task('watch', function() {
   gulp.watch('./src/scripts/**/*.js', gulp.series('webpack'));
   gulp.watch('./src/styles/**/*.scss', gulp.series('css'));
-  gulp.watch('./src/templates/**/*.pug', gulp.series('pug'));
+  gulp.watch('./src/templates/**/*.html', gulp.series('html'));
   gulp.watch('./build/*.html').on('change', browserSync.reload);
   gulp.watch('./build/**/*.js').on('change', browserSync.reload);
 });
@@ -151,7 +136,7 @@ gulp.task('default', gulp.series(
     'css.vendor',
     //'js.vendor',
     'webpack',
-    'pug',
+    'html',
     'copy.readme'
   ),
   gulp.parallel(
@@ -169,7 +154,7 @@ gulp.task('build', gulp.series(
     'css.vendor',
     //'js.vendor',
     'webpack',
-    'pug',
+    'html',
     'copy.readme'
   )
 ));

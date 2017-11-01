@@ -4,7 +4,7 @@
 //@import 'common/sprite-png';
 
 //$color-fon: #002555;
-$color-fon: #001840;
+$color-fon: #7b876f;
 $color-title: #fff;
 $color-subtitle: #006742;
 $color-text: #2c2c2c;
@@ -15,23 +15,23 @@ $font-text: 'myriadregular';
 $font-text-bold: 'myriadbold';
 $font-text-semibold: 'myriadsemibold';
 
-
 html {
   @include desktop() {
     font-size: 16px;
   }
+
   @include laptop() {
     font-size: 16px;
   }
-  
+
   @include minilaptop() {
     font-size: 14px;
   }
-  
+
   @include tablet() {
     font-size: 12px;
   }
-  
+
   @include phone() {
     font-size: 11px;
   }
@@ -81,7 +81,6 @@ body {
   justify-content: center;
   position: relative;
   height: 100%;
-
 }
 
 #app-start {
@@ -99,7 +98,6 @@ body {
 #app-start.offline .wrapper {
   background-image: url('https://ad.csdnevnik.ru/special/staging/panini/assets/img/bg3.jpg');
   //background-size: cover;
-  
 }
 
 #app-teacher {
@@ -141,16 +139,16 @@ body {
 }
 
 .title {
-  text-shadow: 0 4px 7px rgba(118, 56, 0, 0.32);
-  color: #ffffff;
+  color: #fff;
   font-family: $font-title;
   font-size: rem(37px);
   text-align: center;
   text-transform: uppercase;
-  text-shadow: -1px -1px 0 #000,
-  2px 3px 0 rgba(0, 0, 0, 0.21),
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
+  text-shadow:
+    -1px -1px 0 #000,
+    2px 3px 0 rgba(0, 0, 0, 0.21),
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .arrow-up {
@@ -178,6 +176,7 @@ body {
     border-radius: 50%;
   }
 }
+
 .svgall {
   display: none;
 }
